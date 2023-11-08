@@ -161,10 +161,10 @@ body {
         margin-left: 10px;
     }
     .head-list ul li a{
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
     .head-list ul li a:hover{
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
     .titulo-separador h2{
         font-size: 1em;
@@ -186,8 +186,17 @@ body {
         margin: auto;
         width: auto;
         margin-bottom: 50px;
+        padding: 10px;
+        font-size: 0.9em;
     }
     #seccion-tres .contacto .contacto-imagen{
         display: none;
+    }
+    #seccion-tres .contacto .formulario{
+        margin: 0 20px 0 20px;
+        width: 100%;
+    }
+    #seccion-tres .contacto .formulario input{
+        width: 250px;
     }
 }
