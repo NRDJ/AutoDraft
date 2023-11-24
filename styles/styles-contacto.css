@@ -243,9 +243,6 @@
     cursor: pointer;
   }
 
-
-
-
   @media (max-width: 768px) {
     .head-list ul .imagen-hidden-uno {
       display: none;
@@ -267,89 +264,37 @@
       color: black;
       font-size: 0.7em;
     }
-  
     .banner-sobre-nosotros h2 {
       margin: 20px;
       font-size: 1.5em;
     }
-    #seccion-tres {
-      background: none;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-    #seccion-tres .banner img {
-      width: 100%;
-    }
-    #seccion-tres .pagos img {
-      margin-top: 40px;
-      width: 80%;
-    }
-    #seccion-tres .contacto {
-      margin-top: 60px;
-      display: flex;
-    }
-    #seccion-tres .contacto {
-      display: flex;
-      color: white;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
-    #seccion-tres .contacto .contacto-descripcion {
-      width: 45%;
-      margin: 10px;
-    }
-    #seccion-tres .contacto .formulario {
-      width: 45%;
-      margin: 10px;
-    }
-    #seccion-tres .contacto .formulario input {
-      background-color: black;
-      border: none;
-      border-bottom: solid gray 0.5px;
-      width: 200px;
-      color: white;
-    }
-    #seccion-tres .linea-final {
-      height: 30px;
-      background-color: red;
-    }
-    #seccion-tres .contacto .formulario .btn-envio input {
-      background-color: red;
-      height: 30px;
-    }
-    #seccion-tres .contacto .formulario .btn-envio input:hover {
-      background-color: white;
-      color: red;
-      cursor: pointer;
-    }
-    .contacto-imagen {
-      display: none;
-    }
-    .form-email{
-        width: 80%;
-    }
-    .form-email h2 {
-        font-size: 1em;
-      }
-      .form-email input {
-        border: none;
-        height: 1em;
-        background-color: black;
-        border-bottom: solid 1px white;
+      #seccion-tres .contacto {
+        display: flex;
+        flex-wrap: wrap;
         color: white;
-        font-size: 1em;
+        justify-content: space-evenly;
+        margin-bottom: 50px;
       }
-      .form-email .boton-form {
-        background-color: red;
-        border: none;
-        transition: 1s;
+      #seccion-tres .contacto .contacto-descripcion {
+        margin: auto;
+        width: auto;
+        margin-bottom: 50px;
+        padding: 10px;
+        font-size: 0.9em;
       }
-      .form-email .boton-form:hover {
-        cursor: pointer;
-        scale: 102%;
-        background-color: white;
-        color: red;
+      #seccion-tres .contacto .contacto-imagen {
+        display: none;
+      }
+      #seccion-tres .contacto .formulario {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 0 20px 0 20px;
+        width: 100%;
+      }
+      #seccion-tres .contacto .formulario input {
+        width: 250px;
       }
   }
   
