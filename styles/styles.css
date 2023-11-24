@@ -43,7 +43,7 @@ body {
 }
 .head-list ul li a:hover {
   color: black;
-  font-size: 110%;
+  font-size: 105%;
 }
 .head-list ul li a {
   color: white;
@@ -52,7 +52,7 @@ body {
 }
 .head-list .active {
   color: black;
-  font-size: 110%;
+  font-size: 105%;
 }
 
 .linea-separacion {
@@ -149,188 +149,14 @@ body {
   height: 30px;
   background-color: red;
 }
-
-/* -------------------------------------------------Contacto------------------------------------------ */
-.form-contacto {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  color: white;
-}
-.form-contacto h2 {
-  font-size: 2em;
-}
-.form-contacto h3,
-p {
-  display: inline;
-}
-.form-contacto .contacto-contacto {
-  width: auto;
-  margin-left: 50px;
-  justify-self: left;
-  align-self: center;
-}
-.form-contacto .img-equipo img {
-  width: 80%;
-  margin: 20px;
-}
-.form-email {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  width: 80%;
-  margin: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-.form-email h2 {
-  font-size: 2em;
-}
-.form-email input {
-  border: none;
-  height: 2em;
-  background-color: black;
-  border-bottom: solid 1px white;
-  color: white;
-  font-size: 1.2em;
-}
-.form-email .boton-form {
+#seccion-tres .contacto .formulario .btn-envio input{
   background-color: red;
-  border: none;
-  transition: 1s;
+  height: 30px;
 }
-.form-email .boton-form:hover {
-  cursor: pointer;
-  scale: 102%;
+#seccion-tres .contacto .formulario .btn-envio input:hover{
   background-color: white;
   color: red;
-}
-/* -------------------------------------------Sobre--------------------------------------------------------- */
-.titulo-sobre {
-  color: white;
-  font-size: 1.3em;
-  width: 60%;
-  margin: 50px;
-}
-.descripcion-sobre {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-}
-
-.mitad {
-  width: 49%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mitad-dos {
-  width: 49%;
-  display: flex;
-  justify-content: center;
-}
-.mitad-dos .contenido-mitad img {
-  margin: 100px 0;
-}
-.contenido-mitad {
-  margin: 50px;
-}
-.contenido-mitad h3 {
-  color: white;
-  padding: 30px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.3em;
-  font-style: italic;
-}
-.contenido-mitad h4 {
-  color: white;
-  padding: 30px;
-  font-size: 1.1em;
-  margin: 0;
-  margin-bottom: 20px;
-  padding: 20px 0;
-}
-.contenido-mitad p {
-  text-align: left;
-  color: white;
-  font-size: 1.1em;
-  margin: 0;
-  padding: 0;
-}
-.contenido-mitad b {
-  color: red;
-  font-size: 1.5em;
-}
-.contenido-mitad img {
-  width: 100%;
-}
-/* ------------------------------------laminas----------------------------------------------------- */
-.titulo-laminas h2 {
-  color: white;
-  width: 100%;
-  text-align: center;
-  margin: 80px 0 80px 0;
-  font-size: 1.9em;
-}
-.laminas {
-  /* display: grid;
-    grid-template-columns: repeat(3, auto); */
-  display: flex;
-  color: white;
-  margin: 20px;
-  text-align: center;
-  width: 1fr;
-}
-.laminas img {
-  width: 85%;
-  height: 85%;
-  border-radius: 10px;
-  margin: 20px;
-  object-fit: cover;
-  max-height: 200px;
-  object-position: top;
-}
-.sec-uno {
-  flex: 1;
-}
-.laminas .planes {
-  text-align: left;
-}
-.sec-dos {
-  flex: 1;
-}
-.sec-tres {
-    flex: 1;
-  }
-.laminas h3 {
-  margin: 20px;
-  padding: 0;
-}
-.laminas p {
-  margin: 20px;
-  padding: 0;
-}
-.cotizador{
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-}
-.cotizador input{
-    width: 200px;
-    height: 50px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    background-color: red;
-    border: none;
-    color: white;
-    transition: 1s;
-    justify-content: center;
-}
-.cotizador input:hover{
-    cursor: pointer;
-    background-color: white;
-    color: red;
-    scale: 105%;
+  cursor: pointer;
 }
 /* ---------------------------------------------------------------------------------------------------------- */
 @media (max-width: 768px) {
@@ -348,7 +174,11 @@ p {
     font-size: 0.5em;
   }
   .head-list ul li a:hover {
-    font-size: 0.6em;
+    font-size: 0.7em;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 0.7em;
   }
   .titulo-separador h2 {
     font-size: 1em;
@@ -377,6 +207,10 @@ p {
     display: none;
   }
   #seccion-tres .contacto .formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
     margin: 0 20px 0 20px;
     width: 100%;
   }
