@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  .redes-sociales {
+    height: 45px;
+    background-color: black;
+  }
+  .redes-sociales img {
+    width: 30px;
+    float: right;
+    margin: 5px 7px 5px 7px;
+  }
+  .redes-sociales img {
+    transition: 1s;
+  }
+  .redes-sociales img:hover {
+    scale: 120%;
+  }
+  
+  .head-list ul {
+    background-color: red;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .head-list ul li {
+    float: left;
+    margin: auto;
+  }
+  .head-list ul .imagen-hidden {
+    display: none;
+  }
+  .head-list ul li a:hover {
+    color: black;
+    font-size: 102%;
+  }
+  .head-list ul li a {
+    color: white;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 105%;
+  }
+  .banner-sobre-nosotros{
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(/assets/img-sobre/1.png);
+  }
+  .banner-sobre-nosotros h2{
+    margin: 20px;
+    font-size: 2em;
+  }
+  .texto-sobre-nosotros{
+    margin: 40px;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+  }
+  .imagen-equipo{
+    display: flex;
+    justify-content: center;
+  }
+  .imagen-equipo img{
+    width: 60%;
+  }
+  .redes{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .redes img{
+    margin-top: 40px;
+    width: 50%;
+  }
+  .redes .primer-parrafo{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3em;
+  }
+  .redes .listado{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .redes .listado img{
+    width: 25px;
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 5px;
+  }
+  .redes .listado p{
+    display: inline;
+  }
+  .separation{
+    display: flex;
+    justify-content: center;
+  }
+  .horarios{
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .horarios h3{
+    text-align: center;
+    margin-bottom: 40px;
+    color: red;
+    font-size: 1.7em;
+  }
+  .form-contacto {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+  }
+  .form-contacto h2 {
+    font-size: 2em;
+  }
+  .form-contacto h3,
+  p {
+    display: inline;
+  }
+  .form-contacto .contacto-contacto {
+    width: auto;
+    margin-left: 50px;
+    justify-self: left;
+    align-self: center;
+  }
+  .form-contacto .img-equipo img {
+    width: 80%;
+    margin: 20px;
+  }
+  .form-email {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .form-email h2 {
+    font-size: 2em;
+  }
+  .form-email input {
+    border: none;
+    height: 2em;
+    background-color: black;
+    border-bottom: solid 1px white;
+    color: white;
+    font-size: 1.2em;
+  }
+  .form-email .boton-form {
+    background-color: red;
+    border: none;
+    transition: 1s;
+  }
+  .form-email .boton-form:hover {
+    cursor: pointer;
+    scale: 102%;
+    background-color: white;
+    color: red;
+  }
+  #seccion-tres {
+    width: 100%;
+    background: url(/assets/img-sobre/fondo.png) no-repeat;
+    background-size: cover;
+  }
+  #seccion-tres .banner img {
+    width: 100%;
+  }
+  #seccion-tres .pagos {
+    display: flex;
+    justify-content: center;
+  }
+  #seccion-tres .pagos img {
+    margin-top: 40px;
+    width: 60%;
+  }
+  #seccion-tres .contacto {
+    margin-top: 60px;
+    display: flex;
+  }
+  #seccion-tres .contacto {
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  #seccion-tres .contacto .contacto-descripcion {
+    width: 45%;
+    margin-left: 200px;
+  }
+  #seccion-tres .contacto .contacto-descripcion img {
+    width: 80px;
+    position: absolute;
+    margin-left: 320px;
+    margin-top: -65px;
+  }
+  #seccion-tres .contacto .formulario {
+    width: 45%;
+    margin-right: 200px;
+  }
+  #seccion-tres .contacto .formulario input {
+    background-color: black;
+    border: none;
+    border-bottom: solid gray 0.5px;
+    width: 400px;
+    color: white;
+  }
+  #seccion-tres .linea-final {
+    height: 30px;
+    background-color: red;
+  }
+  #seccion-tres .contacto .formulario .btn-envio input{
+    background-color: red;
+    height: 30px;
+  }
+  #seccion-tres .contacto .formulario .btn-envio input:hover{
+    background-color: white;
+    color: red;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .head-list ul .imagen-hidden-uno {
+      display: none;
+    }
+    .head-list ul .imagen-hidden {
+      display: contents;
+    }
+    .head-list ul li img {
+      width: 50px;
+      margin-left: 10px;
+    }
+    .head-list ul li a {
+      font-size: 0.5em;
+    }
+    .head-list ul li a:hover {
+      font-size: 0.7em;
+    }
+    .head-list .active {
+      color: black;
+      font-size: 0.7em;
+    }
+    .banner-sobre-nosotros h2 {
+      margin: 20px;
+      font-size: 1.5em;
+    }
+      #seccion-tres .contacto {
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        justify-content: space-evenly;
+        margin-bottom: 50px;
+      }
+      #seccion-tres .contacto .contacto-descripcion {
+        margin: auto;
+        width: auto;
+        margin-bottom: 50px;
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      #seccion-tres .contacto .contacto-imagen {
+        display: none;
+      }
+      #seccion-tres .contacto .formulario {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 0 20px 0 20px;
+        width: 100%;
+      }
+      #seccion-tres .contacto .formulario input {
+        width: 250px;
+      }
+  }
+  
