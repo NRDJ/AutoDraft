@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  .redes-sociales {
+    height: 45px;
+    background-color: black;
+  }
+  .redes-sociales img {
+    width: 30px;
+    float: right;
+    margin: 5px 7px 5px 7px;
+  }
+  .redes-sociales img {
+    transition: 1s;
+  }
+  .redes-sociales img:hover {
+    scale: 120%;
+  }
+  /* ----------------------------------------------------------------------- */
+  .head-list ul {
+    background-color: red;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .head-list ul li {
+    float: left;
+    margin: auto;
+  }
+  .head-list ul .imagen-hidden {
+    display: none;
+  }
+  .head-list ul li a:hover {
+    color: black;
+    font-size: 102%;
+  }
+  .head-list ul li a {
+    color: white;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 105%;
+  }
+
+  .modificar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .modificar form{
+    width: 50%;
+    padding: 40px;
+    margin-top: 40px;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .modificar form input{
+    height: 40px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  .modificar form textarea{
+    color: black;
+    margin-bottom: 40px;
+  }
+  .modificar form .btn-modificar{
+    background-color: black;
+    color: white;
+    transition: 1s;
+    margin-bottom: 20px;
+  }
+  .modificar form .btn-modificar:hover{
+    scale: 105%;
+    cursor: pointer;
+  }
+
+  h2{
+    text-align: center;
+    padding: 40px;
+  }
