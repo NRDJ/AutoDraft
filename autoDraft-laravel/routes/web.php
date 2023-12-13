@@ -33,3 +33,7 @@ Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
 
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+});
+
