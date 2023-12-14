@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  .redes-sociales {
+    height: 45px;
+    background-color: black;
+  }
+  .redes-sociales img {
+    width: 30px;
+    float: right;
+    margin: 5px 7px 5px 7px;
+  }
+  .redes-sociales img {
+    transition: 1s;
+  }
+  .redes-sociales img:hover {
+    scale: 120%;
+  }
+  /* ----------------------------------------------------------------------- */
+  .head-list ul {
+    background-color: red;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .head-list ul li {
+    float: left;
+    margin: auto;
+  }
+  .head-list ul .imagen-hidden {
+    display: none;
+  }
+  .head-list ul li a:hover {
+    color: black;
+    font-size: 102%;
+  }
+  .head-list ul li a {
+    color: white;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 105%;
+  }
+  /* ----------------------------------------------------------------------------------------Seccion */
+  .banner-sobre-nosotros {
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(/assets/img-sobre/1.png);
+  }
+  .banner-sobre-nosotros h2 {
+    margin: 20px;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .ingreso{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .ingreso form{
+    width: 50%;
+    padding: 40px;
+    margin-top: 40px;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .ingreso form input{
+    height: 40px;
+    margin-bottom: 40px;
+    color: black;
+  }
+  .ingreso form textarea{
+    color: black;
+    margin-bottom: 40px;
+  }
+  .ingreso form .btn-ingresar{
+    background-color: black;
+    color: white;
+    transition: 1s;
+  }
+  .ingreso form .btn-ingresar:hover{
+    scale: 105%;
+    cursor: pointer;
+  }
+.tabla{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    border: 3px solid grey;
+  }
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+tbody td .modificar{
+    color: white;
+    background-color: blue;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+
+tbody td .eliminar{
+    color: white;
+    background-color: red;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
