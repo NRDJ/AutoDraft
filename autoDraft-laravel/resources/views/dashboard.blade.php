@@ -25,28 +25,24 @@
         </ul>
     </div>
     <section class="ingreso">
-      <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
-          @csrf
+    <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
+      @csrf
           <input type="text" name="nombre" placeholder="Nombre del producto">
+          <div id="nombre-error" class="text-danger">@error('nombre') {{ $message }} @enderror</div>
           <input type="number" name="valor" placeholder="Valor">
+          <div id="valor-error" class="text-danger">@error('valor') {{ $message }} @enderror</div>
           <input type="file" name="imagen">
+          <div id="imagen-error" class="text-danger">@error('imagen') {{ $message }} @enderror</div>
           <textarea name="descripcion" cols="30" rows="10" placeholder="Ingrese descripción"></textarea>
-          <input type="submit" value="Ingresar" class="btn-ingresar">
-      </form>
-        @if(session('success'))
-          <div class="alert alert-success">
-            {{ session('success') }}
-          </div>
-        @endif
+          <div id="descripcion-error" class="text-danger">@error('descripcion') {{ $message }} @enderror</div>
+      <input type="submit" value="Ingresar" class="btn-ingresar">
 
-        <!-- <form action="">
-          @csrf
-            <input type="text" name="" id="" placeholder="Nombre del producto">
-            <input type="number" placeholder="Valor">
-            <input type="file">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese descripción"></textarea>
-            <input type="submit" value="Ingresar" class="btn-ingresar">
-        </form> -->
+      @if(session('success'))
+          <div class="alert alert-success">
+              {{ session('success') }}
+          </div>
+      @endif
+    </form>
     </section>
     <section class="tabla">
         <table summary="Tabla de productos Autodraft">
@@ -73,4 +69,29 @@
           </table>
     </section>
 </body>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+        // Function to handle form validation on form submit
+        $('form').submit(function () {
+            // Clear existing error messages
+            $('.text-danger').empty();
+
+            // Validate each input
+            $('form input, form textarea').each(function () {
+                var input = $(this);
+                var name = input.attr('name');
+                var errorContainer = $('#' + name + '-error');
+                var errorMessage = input.siblings('.text-danger').text();
+
+                if (errorMessage) {
+                    errorContainer.html('<p class="text-danger">' + errorMessage + '</p>');
+                }
+            });
+        });
+    });
+</script>
+
+
 </html>

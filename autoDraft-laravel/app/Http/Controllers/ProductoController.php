@@ -11,10 +11,10 @@ class ProductoController extends Controller
     {
         // Validation
         $request->validate([
-            'nombre' => 'required|min:5|max:75',
+            'nombre' => 'required|min:4|max:75',
             'valor' => 'required|numeric|min:1', // Assuming it cannot be 0
-            'descripcion' => 'required|min:5|max:500',
-            'imagen' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'descripcion' => 'required|min:4|max:500',
+            'imagen' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         // Store the record in the database
