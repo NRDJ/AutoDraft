@@ -25,13 +25,28 @@
         </ul>
     </div>
     <section class="ingreso">
-        <form action="">
+      <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
+          @csrf
+          <input type="text" name="nombre" placeholder="Nombre del producto">
+          <input type="number" name="valor" placeholder="Valor">
+          <input type="file" name="imagen">
+          <textarea name="descripcion" cols="30" rows="10" placeholder="Ingrese descripción"></textarea>
+          <input type="submit" value="Ingresar" class="btn-ingresar">
+      </form>
+        @if(session('success'))
+          <div class="alert alert-success">
+            {{ session('success') }}
+          </div>
+        @endif
+
+        <!-- <form action="">
+          @csrf
             <input type="text" name="" id="" placeholder="Nombre del producto">
             <input type="number" placeholder="Valor">
             <input type="file">
             <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese descripción"></textarea>
             <input type="submit" value="Ingresar" class="btn-ingresar">
-        </form>
+        </form> -->
     </section>
     <section class="tabla">
         <table summary="Tabla de productos Autodraft">
