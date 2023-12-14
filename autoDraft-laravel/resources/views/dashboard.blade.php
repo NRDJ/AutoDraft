@@ -15,12 +15,12 @@
         <ul>
             <li class="imagen-hidden-uno"><a href="#"><img src="/assets/img/logo.png" alt=""></a></li>
             <li class="imagen-hidden"><a href="#"><img src="/assets/img/blanco.png" alt=""></a></li>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="laminas.html">Láminas de seguridad</a></li>
-            <li><a href="sobre.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="intranet.html" class="active">Intranet</a></li>
+            <li><a href="{{ route('index') }}">Inicio</a></li>
+            <li><a href="{{ route('catalogo') }}">Catálogo</a></li>
+            <li><a href="{{ route('laminas') }}">Láminas de seguridad</a></li>
+            <li><a href="{{ route('sobre') }}">Sobre nosotros</a></li>
+            <li><a href="{{ route('contacto') }}">Contacto</a></li>
+            <li><a href="{{ route('dashboard') }}" class="active">Intranet</a></li>
             <li><a href="#">Cesta</a></li>
         </ul>
     </div>
