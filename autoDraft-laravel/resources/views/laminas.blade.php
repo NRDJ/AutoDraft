@@ -21,7 +21,8 @@
             <li><a href="{{ route('laminas') }}" class="active">Láminas de seguridad</a></li>
             <li><a href="{{ route('sobre') }}">Sobre nosotros</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
-            <li><a href="#">Intranet</a></li>
+            <li><a href="{{ route('dashboard') }}">Intranet</a></li>
+
             <li><a href="#">Cesta</a></li>
         </ul>
     </div>
