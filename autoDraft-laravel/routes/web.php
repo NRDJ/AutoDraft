@@ -44,7 +44,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
 //Create product
 Route::post('/producto/store', [ProductoController::class, 'storeProductInDatabase'])->name('producto.store');
 
@@ -52,6 +51,7 @@ Route::post('/producto/store', [ProductoController::class, 'storeProductInDataba
 Route::delete('/products/{id}', [ProductoController::class, 'destroy']);
 
 //Update product
-
+Route::get('/products/{id}/modificar', [ProductoController::class, 'modificar'])->name('modificar');
+Route::post('/products/{id}/modificar', [ProductoController::class, 'update'])->name('update');
 
 require __DIR__.'/auth.php';

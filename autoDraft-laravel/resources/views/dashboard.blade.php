@@ -63,7 +63,10 @@
                 <td>{{ $producto->nombre }}</td>
                 <td>{{ $producto->valor }}</td>
                 <td>{{ $producto->descripcion }}</td>
-                <td><input type="button" class="modificar" value="Modificar" data-id="{{ $producto->id }}" onclick="location.href='/pages/modificar.html'"></td>
+                <td>
+                <a href="{{ route('modificar', ['id' => $producto->id]) }}">
+                    <input type="button" class="modificar" value="Modificar" data-id="{{ $producto->id }}">
+                </a>
                 <td><input type="button" class="eliminar" value="Eliminar" data-id="{{ $producto->id }}">
             </tr>
             @endforeach

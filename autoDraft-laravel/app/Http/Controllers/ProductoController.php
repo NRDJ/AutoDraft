@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto; 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller {
 
@@ -49,6 +50,36 @@ class ProductoController extends Controller {
         } else {
             return response()->json(['error' => 'Product not found'], 404);
         }
+    }
+
+    public function modificar($id) {
+        $product = Producto::find($id);
+        return view('modificar', ['product' => $product]);
+    }
+
+    public function update(Request $request, $id) {
+        $product = Producto::find($id);
+        $product->nombre = $request->input('nombre');
+        $product->valor = $request->input('valor');
+        $product->descripcion = $request->input('descripcion');
+    
+        // handle the file upload if there is one
+        if ($request->hasFile('imagen')) {
+            // Delete the old image from the storage
+            Storage::delete(public_path('uploads/' . $product->imagen));
+    
+            // Upload the new image
+            $image = $request->file('imagen');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('uploads'), $filename);
+    
+            // Update the product image
+            $product->imagen = $filename;
+        }
+    
+        $product->save();
+    
+        return redirect()->route('dashboard')->with('success', 'Product updated successfully');
     }
 
     // Example controller method
