@@ -57,14 +57,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">123</th>
-                <td>Láminas de acero</td>
-                <td>000.000</td>
-                <td>Las laminas de acero son....</td>
-                <td><input type="button" class="modificar" value="Modifcar" onclick="location.href='/pages/modificar.html'"></td>
+            @foreach($productos as $producto)
+            <tr>
+                <th scope="row">{{ $producto->id }}</th>
+                <td>{{ $producto->nombre }}</td>
+                <td>{{ $producto->valor }}</td>
+                <td>{{ $producto->descripcion }}</td>
+                <td><input type="button" class="modificar" value="Modificar" onclick="location.href='/pages/modificar.html'"></td>
                 <td><input type="button" class="eliminar" value="Eliminar"></td>
-              </tr>
+            </tr>
+            @endforeach
             </tbody>
           </table>
     </section>

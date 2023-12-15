@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Producto; // Make sure to import your Product model
+use App\Models\Producto; 
+use Illuminate\Support\Facades\DB;
 
-class ProductoController extends Controller
-{
-    public function store(Request $request)
-    {
+class ProductoController extends Controller {
+
+    public function storeProductInDatabase(Request $request) {
         // Validation
         $request->validate([
             'nombre' => 'required|min:4|max:75',
@@ -35,4 +35,11 @@ class ProductoController extends Controller
 
         return redirect()->back()->with('success', 'Producto ingresado correctamente.');
     }
+
+    public function getProducts() {
+        $productos = DB::table('productos')->get();
+        return view('dashboard', ['productos' => $productos]);
+    }
+
+    // Example controller method
 }
