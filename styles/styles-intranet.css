@@ -124,3 +124,56 @@
   .seccion-uno .frase{
     width: 50%; 
   }
+
+
+
+
+
+
+
+
+  /* ------------------------------------------------------------------------- */
+  @media (max-width: 768px) {
+    .head-list ul .imagen-hidden-uno {
+      display: none;
+    }
+    .head-list ul .imagen-hidden {
+      display: contents;
+    }
+    .head-list ul li img {
+      width: 50px;
+      margin-left: 10px;
+    }
+    .head-list ul li a {
+      font-size: 0.5em;
+    }
+    .head-list ul li a:hover {
+      font-size: 0.7em;
+    }
+    .head-list .active {
+      color: black;
+      font-size: 0.7em;
+    }
+    .banner-sobre-nosotros h2 {
+      margin: 20px;
+      font-size: 1.5em;
+    }
+
+    .seccion-uno{
+      flex-direction: column;
+    }
+    .seccion-uno .formulario{
+      width: 100%;
+    }
+    .seccion-uno .formulario form{
+      display: flex;
+      flex-direction: column;
+      background-color: red;
+      width: 80%;
+      padding: 50px;
+      margin-bottom: 40px;
+    }
+    .seccion-uno .frase{
+      width: 100%; 
+    }
+  }

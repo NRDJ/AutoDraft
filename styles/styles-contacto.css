@@ -128,35 +128,19 @@
     color: red;
     font-size: 1.7em;
   }
+  /* ---------------------------------------------------------------------------------------- */
   .form-contacto {
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: white;
   }
-  .form-contacto h2 {
-    font-size: 2em;
-  }
-  .form-contacto h3,
-  p {
-    display: inline;
-  }
-  .form-contacto .contacto-contacto {
-    width: auto;
-    margin-left: 50px;
-    justify-self: left;
-    align-self: center;
-  }
-  .form-contacto .img-equipo img {
-    width: 80%;
-    margin: 20px;
-  }
   .form-email {
     display: flex;
     flex-direction: column;
+    align-items: center;
     color: white;
-    width: 40%;
-    margin: auto;
+    width: 100%;
     margin-top: 100px;
     margin-bottom: 100px;
   }
@@ -170,11 +154,25 @@
     border-bottom: solid 1px white;
     color: white;
     font-size: 1.2em;
+    width: 100%;
   }
-  .form-email .boton-form {
+  .form-email textarea {
+    border: none;
+    height: 2em;
+    background-color: black;
+    border-bottom: solid 1px white;
+    color: white;
+    font-size: 1.2em;
+    width: 100%;
+    height: 200px;
+  }
+  .form-email form .boton-form {
     background-color: red;
     border: none;
     transition: 1s;
+    padding: 10px;
+    height: auto;
+    border-radius: 20px;
   }
   .form-email .boton-form:hover {
     cursor: pointer;
@@ -226,6 +224,14 @@
     background-color: black;
     border: none;
     border-bottom: solid gray 0.5px;
+    width: 400px;
+    color: white;
+  }
+  #seccion-tres .contacto .formulario textarea {
+    background-color: black;
+    border: none;
+    border-bottom: solid gray 0.5px;
+    height: 200px;
     width: 400px;
     color: white;
   }
@@ -294,6 +300,9 @@
         width: 100%;
       }
       #seccion-tres .contacto .formulario input {
+        width: 250px;
+      }
+      #seccion-tres .contacto .formulario textarea {
         width: 250px;
       }
   }
