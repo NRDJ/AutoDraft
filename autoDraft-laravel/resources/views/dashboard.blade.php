@@ -58,7 +58,7 @@
             </thead>
             <tbody>
             @foreach($productos as $producto)
-            <tr>
+            <tr id="product-{{ $producto->id }}">
                 <th scope="row">{{ $producto->id }}</th>
                 <td>{{ $producto->nombre }}</td>
                 <td>{{ $producto->valor }}</td>
@@ -95,14 +95,21 @@
 
         $('.eliminar').click(function() {
         var id = $(this).data('id');
+        
+        // Optimistically remove the row from the table
+        var row = $('#product-' + id);
+        row.remove();
+
             $.ajax({
                 url: '/products/' + id,
                 type: 'DELETE',
                 data: {
                     _token: $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function(response) {
-                    // Handle the response here
+                error: function(response) {
+                    // If there's an error, add the row back and show an error message
+                    row.appendTo('table');
+                    alert('Error: ' + response.responseText);
                 }
             });
         });
