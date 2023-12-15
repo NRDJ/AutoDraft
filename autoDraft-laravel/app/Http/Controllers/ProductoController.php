@@ -41,5 +41,15 @@ class ProductoController extends Controller {
         return view('dashboard', ['productos' => $productos]);
     }
 
+    public function destroy($id) {
+        $product = Producto::find($id);
+        if ($product) {
+            $product->delete();
+            return response()->json(['success' => 'Product deleted successfully']);
+        } else {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+    }
+
     // Example controller method
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta  name="csrf-token" content="{{ csrf_token() }}" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles-cruds.css" type="text/css">
     <title>Gestión de productos</title>
@@ -63,8 +63,8 @@
                 <td>{{ $producto->nombre }}</td>
                 <td>{{ $producto->valor }}</td>
                 <td>{{ $producto->descripcion }}</td>
-                <td><input type="button" class="modificar" value="Modificar" onclick="location.href='/pages/modificar.html'"></td>
-                <td><input type="button" class="eliminar" value="Eliminar"></td>
+                <td><input type="button" class="modificar" value="Modificar" data-id="{{ $producto->id }}" onclick="location.href='/pages/modificar.html'"></td>
+                <td><input type="button" class="eliminar" value="Eliminar" data-id="{{ $producto->id }}">
             </tr>
             @endforeach
             </tbody>
@@ -89,6 +89,20 @@
 
                 if (errorMessage) {
                     errorContainer.html('<p class="text-danger">' + errorMessage + '</p>');
+                }
+            });
+        });
+
+        $('.eliminar').click(function() {
+        var id = $(this).data('id');
+            $.ajax({
+                url: '/products/' + id,
+                type: 'DELETE',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    // Handle the response here
                 }
             });
         });
