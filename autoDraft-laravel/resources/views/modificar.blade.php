@@ -27,9 +27,12 @@
         </ul>
     </div>
     <div class="logout">
-        <a href=""><img src="/assets/img-contactos/cerrar-sesion (1).png" alt="" ></a>
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <a href="#" onclick="this.closest('form').submit();"><img src="/assets/img-contactos/cerrar-sesion (1).png" alt=""></a>
+    </form>
         <p>Cerrar sesión</p>
-      </div>
+    </div>
     <h2>Modificar producto</h2>
     <section class="modificar">
         <form action="{{ route('update', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">

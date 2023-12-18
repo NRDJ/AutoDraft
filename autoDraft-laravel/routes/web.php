@@ -43,13 +43,17 @@ Route::middleware('auth')->group(function () {
 });
 
 //Create product
-Route::post('/producto/store', [ProductoController::class, 'storeProductInDatabase'])->name('producto.store');
+Route::post('/producto/store', [ProductoController::class, 'storeProductInDatabase'])
+->middleware(['auth', 'verified'])->name('producto.store');
 
 //Delete product
-Route::delete('/products/{id}', [ProductoController::class, 'destroy']);
+Route::delete('/products/{id}', [ProductoController::class, 'destroy'])
+->middleware(['auth', 'verified']);
 
 //Update product
-Route::get('/products/{id}/modificar', [ProductoController::class, 'modificar'])->name('modificar');
-Route::post('/products/{id}/modificar', [ProductoController::class, 'update'])->name('update');
+Route::get('/products/{id}/modificar', [ProductoController::class, 'modificar'])
+->middleware(['auth', 'verified'])->name('modificar');
+Route::post('/products/{id}/modificar', [ProductoController::class, 'update'])
+->middleware(['auth', 'verified'])->name('update');
 
 require __DIR__.'/auth.php';

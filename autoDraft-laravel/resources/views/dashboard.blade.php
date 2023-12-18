@@ -26,9 +26,12 @@
         </ul>
     </div>
     <div class="logout">
-        <a href=""><img src="/assets/img-contactos/cerrar-sesion (1).png" alt="" ></a>
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <a href="#" onclick="this.closest('form').submit();"><img src="/assets/img-contactos/cerrar-sesion (1).png" alt=""></a>
+    </form>
         <p>Cerrar sesión</p>
-      </div>
+    </div>
     <section class="ingreso">
     <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
       @csrf
