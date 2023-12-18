@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-})->name('catalogo');
+Route::get('/catalogo', [ProductoController::class, 'showCatalogo'])->name('catalogo');
 
 Route::get('/laminas', function () {
     return view('laminas');

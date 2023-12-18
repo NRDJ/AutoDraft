@@ -82,5 +82,10 @@ class ProductoController extends Controller {
         return redirect()->route('dashboard')->with('success', 'Product updated successfully');
     }
 
+    public function showCatalogo() {
+        $products = DB::table('productos')->get();
+        return view('catalogo', ['products' => $products]);
+    }
+
     // Example controller method
 }
