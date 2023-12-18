@@ -46,9 +46,9 @@ class ProductoController extends Controller {
         $product = Producto::find($id);
         if ($product) {
             $product->delete();
-            return response()->json(['success' => 'Product deleted successfully']);
+            return response()->json(['success' => 'Product eliminado exitosamente']);
         } else {
-            return response()->json(['error' => 'Product not found'], 404);
+            return response()->json(['error' => 'No se encontró el producto'], 404);
         }
     }
 
@@ -58,6 +58,15 @@ class ProductoController extends Controller {
     }
 
     public function update(Request $request, $id) {
+
+        // Validation
+        $request->validate([
+            'nombre' => 'required|min:4|max:75',
+            'valor' => 'required|numeric|min:1|max:2147483647', // Assuming it cannot be 0
+            'descripcion' => 'required|min:4|max:500',
+            'imagen' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        
         $product = Producto::find($id);
         $product->nombre = $request->input('nombre');
         $product->valor = $request->input('valor');
@@ -79,7 +88,7 @@ class ProductoController extends Controller {
     
         $product->save();
     
-        return redirect()->route('dashboard')->with('success', 'Product updated successfully');
+        return redirect()->route('dashboard')->with('success', 'Producto actualizado exitosamente');
     }
 
     public function showCatalogo() {

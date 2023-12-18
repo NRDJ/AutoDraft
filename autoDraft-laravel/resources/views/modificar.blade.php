@@ -38,11 +38,30 @@
         <form action="{{ route('update', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="text" name="nombre" id="name" placeholder="Nombre del producto" value="{{ $product->name }}">
+            <div id="nombre-error" class="text-danger">@error('nombre') {{ $message }} @enderror</div>
             <input type="number" name="valor" placeholder="Valor" value="{{ $product->value }}">
+            <div id="valor-error" class="text-danger">@error('valor') {{ $message }} @enderror</div>
             <input type="file" name="imagen"  placeholder="imagen">
+            <div id="imagen-error" class="text-danger">@error('imagen') {{ $message }} @enderror</div>
             <textarea name="descripcion" id="description" cols="30" rows="10" placeholder="Ingrese descripción">{{ $product->description }}</textarea>
+            <div id="descripcion-error" class="text-danger">@error('descripcion') {{ $message }} @enderror</div>
             <input type="submit" value="Modifcar" class="btn-modificar">
         </form>
     </section>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $(document).ready(function () {
+            // Check if there's a success message in the session data
+            @if(session('success'))
+                Swal.fire({
+                    title: 'Éxito',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            @endif
+    });
 </html>
