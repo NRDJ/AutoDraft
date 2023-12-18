@@ -89,6 +89,15 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     $(document).ready(function () {
+                    // Check if there's a success message in the session data
+            @if(session('success'))
+                Swal.fire({
+                    title: 'Éxito',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            @endif
         // Function to handle form validation on form submit
         $('form').submit(function () {
             // Clear existing error messages
@@ -113,9 +122,12 @@
 
             Swal.fire({
                 title: '¿Estás seguro que deseas eliminar este producto?',
+                text: "Esta acción es irreversible",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Eliminar',
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Eliminar",
                 cancelButtonText: 'Cancelar',
             }).then((result) => {
                 if (result.isConfirmed) {
