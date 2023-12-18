@@ -72,10 +72,13 @@
                 <td>{{ $producto->valor }}</td>
                 <td>{{ $producto->descripcion }}</td>
                 <td>
-                <a href="{{ route('modificar', ['id' => $producto->id]) }}">
-                    <input type="button" class="modificar" value="Modificar" data-id="{{ $producto->id }}">
-                </a>
-                <td><input type="button" class="eliminar" value="Eliminar" data-id="{{ $producto->id }}">
+                    <a href="{{ route('modificar', ['id' => $producto->id]) }}">
+                        <input type="button" class="modificar" value="Modificar" data-id="{{ $producto->id }}">
+                    </a>
+                </td>
+                <td>
+                    <input type="button" class="eliminar" value="Eliminar" data-id="{{ $producto->id }}">
+                </td>
             </tr>
             @endforeach
             </tbody>
@@ -83,7 +86,7 @@
     </section>
 </body>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     $(document).ready(function () {
         // Function to handle form validation on form submit
@@ -105,22 +108,32 @@
         });
 
         $('.eliminar').click(function() {
-        var id = $(this).data('id');
-        
-        // Optimistically remove the row from the table
-        var row = $('#product-' + id);
-        row.remove();
+            var id = $(this).data('id');
+            var row = $('#product-' + id);
 
-            $.ajax({
-                url: '/products/' + id,
-                type: 'DELETE',
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
-                error: function(response) {
-                    // If there's an error, add the row back and show an error message
-                    row.appendTo('table');
-                    alert('Error: ' + response.responseText);
+            Swal.fire({
+                title: '¿Estás seguro que deseas eliminar este producto?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Eliminar',
+                cancelButtonText: 'Cancelar',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Optimistically remove the row from the table
+                    row.remove();
+
+                    $.ajax({
+                        url: '/products/' + id,
+                        type: 'DELETE',
+                        data: {
+                            _token: $('meta[name="csrf-token"]').attr('content')
+                        },
+                        error: function(response) {
+                            // If there's an error, add the row back and show an error message
+                            row.appendTo('table');
+                            Swal.fire('Error', response.responseText, 'error');
+                        }
+                    });
                 }
             });
         });
