@@ -31,7 +31,7 @@
         <h2>Catálogo</h2>
     </div>
 
-    <section id="seccion-catalogo">
+    <!-- <section id="seccion-catalogo">
         <div class="caja-uno">
             <div class="left-side"><img src="/assets/img/img-catalogo/puerta.jpg" alt=""></div>
             <div class="right-side">
@@ -83,6 +83,23 @@
                 <span class="precio"><p>$000.000</p></span>
             </div>
         </div>
+    </section> -->
+
+    <section id="seccion-catalogo">
+    @foreach($products as $product)
+        <div class="caja-uno">
+            <div class="left-side"><img src="{{ asset('uploads/' . $product->imagen) }}" alt=""></div>
+            <div class="right-side">
+                <span class="titulo">
+                    <h2>{{ $product->nombre }}</h2>
+                </span>
+                <h3>DESCRIPCIÓN</h3>
+                <p>{{ $product->descripcion }}</p>
+                <div class="precio"><p>${{ $product->valor }}</p></div>
+            </div>
+        </div>
+        <div class="separation"><img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt=""></div>
+    @endforeach
     </section>
 
 

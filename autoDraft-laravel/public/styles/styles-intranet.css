@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  .redes-sociales {
+    height: 45px;
+    background-color: black;
+  }
+  .redes-sociales img {
+    width: 30px;
+    float: right;
+    margin: 5px 7px 5px 7px;
+  }
+  .redes-sociales img {
+    transition: 1s;
+  }
+  .redes-sociales img:hover {
+    scale: 120%;
+  }
+  /* ----------------------------------------------------------------------- */
+  .head-list ul {
+    background-color: red;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .head-list ul li {
+    float: left;
+    margin: auto;
+  }
+  .head-list ul .imagen-hidden {
+    display: none;
+  }
+  .head-list ul li a:hover {
+    color: black;
+    font-size: 102%;
+  }
+  .head-list ul li a {
+    color: white;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 105%;
+  }
+  /* ----------------------------------------------------------------------------------------Seccion */
+  .banner-sobre-nosotros {
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(/assets/img-sobre/1.png);
+  }
+  .banner-sobre-nosotros h2 {
+    margin: 20px;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  /* ------------------------------------------------------------------------------------------------- */
+  .seccion-uno{
+    display: flex;
+    padding: 40px;
+    align-items: center;
+  }
+  .seccion-uno .formulario{
+    width: 50%;
+  }
+  .seccion-uno .formulario form{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    width: 60%;
+    padding: 50px;
+  }
+.seccion-uno .formulario form input{
+    height: 30px;
+    width: 100%;
+    color: black;
+    margin-bottom: 40px;
+
+  }
+  .seccion-uno .formulario form label{
+    margin-bottom: 40px;
+    font-size: 1.3em;
+  }
+  .seccion-uno .formulario form a{
+    margin-bottom: 40px;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8em;
+    transition: 1s;
+  }
+  .seccion-uno .formulario form a:hover{
+    scale: 105%;
+    color: black;
+  }
+  .seccion-uno .formulario form .ingreso{
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    font-size: 1.1em;
+    transition: 1s;
+  }
+  .seccion-uno .formulario form .ingreso:hover{
+    scale: 103%;
+    cursor: pointer;
+  } 
+
+  .seccion-uno .frase{
+    width: 50%; 
+  }

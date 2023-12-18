@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/catalogo', function () {
-    return view('catalogo');
-})->name('catalogo');
+Route::get('/catalogo', [ProductoController::class, 'showCatalogo'])->name('catalogo');
 
 Route::get('/laminas', function () {
     return view('laminas');
@@ -34,14 +33,27 @@ Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [ProductoController::class, 'getProducts'])
+    ->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Create product
+Route::post('/producto/store', [ProductoController::class, 'storeProductInDatabase'])
+->middleware(['auth', 'verified'])->name('producto.store');
+
+//Delete product
+Route::delete('/products/{id}', [ProductoController::class, 'destroy'])
+->middleware(['auth', 'verified']);
+
+//Update product
+Route::get('/products/{id}/modificar', [ProductoController::class, 'modificar'])
+->middleware(['auth', 'verified'])->name('modificar');
+Route::post('/products/{id}/modificar', [ProductoController::class, 'update'])
+->middleware(['auth', 'verified'])->name('update');
 
 require __DIR__.'/auth.php';

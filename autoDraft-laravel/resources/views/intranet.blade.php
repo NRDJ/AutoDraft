@@ -18,11 +18,11 @@
         <li class="imagen-hidden-uno"><a href="#"><img src="/assets/img/logo.png" alt=""></a></li>
             <li class="imagen-hidden"><a href="#"><img src="/assets/img/blanco.png" alt=""></a></li>
             <li><a href="{{ route('index') }}">Inicio</a></li>
-            <li><a href="{{ route('catalogo') }}">Catálogo</a></li>
+            <li><a href="{{ route('catalogo') }}" class="active">Catálogo</a></li>
             <li><a href="{{ route('laminas') }}">Láminas de seguridad</a></li>
             <li><a href="{{ route('sobre') }}">Sobre nosotros</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
-            <li><a href="{{ route('dashboard') }}" class="active">Intranet</a></li>
+            <li><a href="{{ route('dashboard') }}">Intranet</a></li>
             <li><a href="#">Cesta</a></li>
         </ul>
     </div>
@@ -31,39 +31,11 @@
     </div>
     <section class="seccion-uno">
         <div class="formulario">
-            <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
+            <form action="/pages/crud.html">
                 <label for="">Inicio de sesión</label>
-                <!-- Email Address -->
-                <div>
-                    <x-input-label for="email" :value="__('')" />
-                    <x-text-input id="email" class="block mt-1 w-full" 
-                                    type="email" name="email" 
-                                    :value="old('email')"
-                                    placeholder="Email"
-                                    required autofocus autocomplete="username" />
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                </div>
-                <!-- Password -->
-                <div>
-                    <x-input-label for="password" :value="__('')" />
-
-                    <x-text-input id="password" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password"
-                                    placeholder="Contraseña"
-                                    required autocomplete="current-password" />
-
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                </div>
-                <!-- Forgot Password -->
-                @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Olvidé mi contraseña') }}
-                </a>
-                @endif
+                <input type="text" placeholder="Nombre">
+                <input type="password" placeholder="Contraseña">
+                <a href="#">Olvidé mi contraseña</a>
                 <input class="ingreso" type="submit" value="Ingresar">
         </div>
         <div></div>
