@@ -4,6 +4,7 @@
     <meta  name="csrf-token" content="{{ csrf_token() }}" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles-cruds.css" type="text/css">
+    <link rel="stylesheet" href="/styles/styles-logout.css" type="text/css">
     <title>Gestión de productos</title>
 </head>
 <body>
@@ -24,6 +25,10 @@
             <li><a href="#">Cesta</a></li>
         </ul>
     </div>
+    <div class="logout">
+        <a href=""><img src="/assets/img-contactos/cerrar-sesion (1).png" alt="" ></a>
+        <p>Cerrar sesión</p>
+      </div>
     <section class="ingreso">
     <form action="{{ route('producto.store') }}" method="post" enctype="multipart/form-data">
       @csrf
