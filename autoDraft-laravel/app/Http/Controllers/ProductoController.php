@@ -39,7 +39,7 @@ class ProductoController extends Controller {
 
     public function getProducts() {
         $productos = DB::table('productos')->get();
-        return view('dashboard', ['productos' => $productos]);
+        return view('admin.dashboard', ['productos' => $productos]);
     }
 
     public function destroy($id) {
@@ -54,7 +54,7 @@ class ProductoController extends Controller {
 
     public function modificar($id) {
         $product = Producto::find($id);
-        return view('modificar', ['product' => $product]);
+        return view('admin.modificar', ['product' => $product]);
     }
 
     public function update(Request $request, $id) {
