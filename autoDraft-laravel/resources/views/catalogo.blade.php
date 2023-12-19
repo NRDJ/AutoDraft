@@ -84,6 +84,11 @@
                 <div class="precio"><p>${{ $product->valor }}</p></div>
             </div>
         </div>
+        <div class="btn-aniadir">
+            <form action="{{ route('index') }}" method="get" enctype="multipart/form-data">
+                <input type="submit" value="Añadir">
+            </form>
+        </div>
         <div class="separation"><img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt=""></div>
     @endforeach
     </section>
