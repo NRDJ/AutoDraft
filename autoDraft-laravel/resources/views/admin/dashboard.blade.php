@@ -84,6 +84,15 @@
                     confirmButtonText: 'OK'
                 });
             @endif
+
+            @if($errors->any())
+                Swal.fire({
+                    title: 'Error',
+                    text: '{{ implode(', ', $errors->all()) }}',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            @endif
         // Function to handle form validation on form submit
         $('form').submit(function () {
             // Clear existing error messages

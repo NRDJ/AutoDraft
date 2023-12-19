@@ -33,7 +33,7 @@ class ProductoController extends Controller {
         }
 
         $producto->save();
-
+        
         return redirect()->back()->with('success', 'Producto ingresado correctamente.');
     }
 
