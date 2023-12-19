@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: white;
+  }
+  body {
+    background-color: black;
+  }
+  .redes-sociales {
+    height: 45px;
+    background-color: black;
+  }
+  .redes-sociales img {
+    width: 30px;
+    float: right;
+    margin: 5px 7px 5px 7px;
+  }
+  .redes-sociales img {
+    transition: 1s;
+  }
+  .redes-sociales img:hover {
+    scale: 120%;
+  }
+  /* ----------------------------------------------------------------------- */
+  .head-list ul {
+    background-color: red;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .head-list ul li {
+    float: left;
+    margin: auto;
+  }
+  .head-list ul .imagen-hidden {
+    display: none;
+  }
+  .head-list ul li a:hover {
+    color: black;
+    font-size: 102%;
+  }
+  .head-list ul li a {
+    color: white;
+    font-size: 1em;
+    transition: 0.5s;
+  }
+  .head-list .active {
+    color: black;
+    font-size: 105%;
+  }
+
+  .banner-sobre-nosotros {
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    background: url(/assets/img-sobre/1.png);
+  }
+  .banner-sobre-nosotros h2 {
+    margin: 20px;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .productos-carro{
+    display: flex;
+    flex-direction: column;
+  }
+  .productos-carro h3{
+    margin-top: 40px;
+    text-align: center;
+  }
+  .productos-carro .linea{
+    margin: 20px;
+  }
+  .caja{
+    width: 90%;
+    margin: auto;
+  }
+  .caja .producto{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .producto img{
+    width: 20%;
+  }
+  .producto .descripcion{
+    width: 40%;
+    margin-left: 20px;
+  }
+  .descripcion h4{
+    font-size: 1.8em;
+  }
+  .btn-interaccion{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+    margin: auto;
+  }
+  .btn-interaccion .parr{
+    margin: 20px 0;
+  }
+  .btn-interaccion .parr b{
+    color: red;
+    font-size: 1.3em;
+  }
+  .btn-interaccion .inter{
+    display: flex;
+  }
+  .btn-interaccion a{
+    color: red;
+    font-size: 1.2em;
+    transition: 1s;
+  }
+  .inter p{
+    margin: 0 40px;
+  }
+  .inter a:hover{
+    color: white;
+    scale: 105%;
+  }
+  .final-caja{
+    margin: auto;
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  .final-caja select{
+    color: black;
+    width: 50px;
+    height: 40px;
+  }
+  .final-caja select option{
+    color: black;
+  }
+  .final-caja .precio{
+    font-size: 2em;
+  }
+
+  .btn-enviar-prods{
+    width: 55%;
+    margin: auto;
+    display: flex;
+  }
+  .btn-enviar-prods form{
+    width: 100%;
+  }
+  .btn-enviar-prods input{
+    color: white;
+    width: 30%;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+    height: 50px;
+    font-size: 1.4em;
+    border-radius: 20px;
+  }
+  .btn-enviar-prods input:hover{
+    scale: 105%;
+  }
+  .carro-vacio{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carro-vacio img{
+    width: 15%;
+  }
+  .carro-vacio p{
+    font-size: 1.5em;
+    margin: 40px 0 60px 0;
+  }
+  .carro-vacio input{
+    background-color: red;
+    border: none;
+    width: 30%;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  .carro-vacio input:hover{
+    scale: 105%;
+  }
+
+/* ----------------------------ubicacion----------------- */
+.ubi{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: rgb(31, 30, 30);
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+}
+.ubi h3{
+  margin-bottom: 20px;
+}
+.ubi .formulario-ubi .input-ubi{
+  width: 50%;
+  height: 30px;
+  color: black;
+}
+.ubi .formulario-ubi .btn-ubi{
+  width: 30%;
+  height: 35px;
+  border-radius: 20px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+.ubi a{
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 25%;
+}
+.total{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+}
+.total h3{
+  margin: 10px;
+}
+.total .total-productos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total-productos{
+  font-size: 1.5em;
+}
+.botones{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.seguir{
+  width: 250px;
+  height: 50px;
+  background-color: red;
+  border: none;
+  border-radius: 40px;
+  margin: 20px 0;
+}
+.comprar{
+  width: 250px;
+  width: 250px;
+  height: 50px;
+  background-color: black;
+  border: solid 2px red;
+  border-radius: 40px;
+}
+  /* * ------------------------------------------------------------------------------------- seccion-pagos */ */
+#seccion-tres {
+  background: url(/assets/img-sobre/fondo.png) no-repeat;
+  background-size: cover;
+}
+#seccion-tres .banner img {
+  width: 100%;
+}
+#seccion-tres .pagos {
+  display: flex;
+  justify-content: center;
+}
+#seccion-tres .pagos img {
+  margin-top: 40px;
+  width: 60%;
+}
+#seccion-tres .contacto {
+  margin-top: 60px;
+  display: flex;
+}
+#seccion-tres .contacto {
+  display: flex;
+  color: white;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#seccion-tres .contacto .contacto-descripcion {
+  width: 45%;
+  margin-left: 200px;
+}
+#seccion-tres .contacto .contacto-descripcion img {
+  width: 80px;
+  position: absolute;
+  margin-left: 320px;
+  margin-top: -65px;
+}
+#seccion-tres .contacto .formulario {
+  width: 45%;
+  margin-right: 200px;
+}
+#seccion-tres .contacto .formulario input {
+  background-color: black;
+  border: none;
+  border-bottom: solid gray 0.5px;
+  width: 400px;
+  color: white;
+}
+#seccion-tres .contacto .formulario textarea {
+  background-color: black;
+  border: none;
+  border-bottom: solid gray 0.5px;
+  height: 200px;
+  width: 400px;
+  color: white;
+}
+#seccion-tres .linea-final {
+  height: 30px;
+  background-color: red;
+}
+#seccion-tres .contacto .formulario .btn-envio input {
+  background-color: red;
+  height: 30px;
+}
+#seccion-tres .contacto .formulario .btn-envio input:hover {
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}

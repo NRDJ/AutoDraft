@@ -36,6 +36,10 @@ Route::get('/contacto', function () {
 Route::get('/dashboard', [ProductoController::class, 'getProducts'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('shoppingCart/cesta', function () {
+    return view('shoppingCart/cesta');
+})->name('cesta');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
