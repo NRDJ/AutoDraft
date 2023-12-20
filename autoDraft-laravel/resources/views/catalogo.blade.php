@@ -99,12 +99,19 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
             var message = "{{ Session::get('success') }}";
+            var errorMessage = "{{ Session::get('failure') }}";
 
             if(message) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Éxito',
                     text: message,
+                })
+            } else if(errorMessage) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: errorMessage,
                 })
             }
     </script>

@@ -40,6 +40,8 @@ Route::get('cesta', function () {
     return view('cesta');
 })->name('cesta');
 
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -65,5 +67,9 @@ Route::get('/add-to-cesta/{id}', [ProductoController::class, 'addToCesta'])->nam
 
 // remove from cart/cesta
 Route::get('/remove-from-cesta/{id}', [ProductoController::class, 'removeFromCesta'])->name('remove.from.cesta');
+
+// remove from cart/cesta
+Route::post('/ubicacion', [ProductoController::class, 'ubicacion'])->name('ubicacion');
+
 
 require __DIR__.'/auth.php';

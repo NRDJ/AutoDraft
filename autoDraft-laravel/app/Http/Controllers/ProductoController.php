@@ -107,7 +107,7 @@ class ProductoController extends Controller {
         $cart = session()->get('cart', []);
 
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            return redirect()->back()->with('failure', 'El producto ya está en la cesta!');
         } else {
             $cart[$id] = [
                 "nombre" => $producto->nombre,
@@ -131,6 +131,18 @@ class ProductoController extends Controller {
         }
 
         return redirect()->back()->with('success', 'Producto removido exitosamente de la cesta.');
+    }
+
+    public function ubicacion(Request $request) {
+        $totalCost = 0;
+        $totalQuantity = 0;
+    
+        foreach($request->products as $product) {
+            $totalCost += $product['quantity'] * $product['price'];
+            $totalQuantity += $product['quantity'];
+        }
+    
+        return view('ubicacion', ['totalCost' => $totalCost, 'totalQuantity' => $totalQuantity]);
     }
 
     // Example controller method

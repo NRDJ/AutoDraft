@@ -53,44 +53,41 @@
                     <p>|</p> <a href="{{ route('remove.from.cesta', $id) }}">Eliminar</a>
                 </div>
             </div>
-            <div class="final-caja">
-                <select name="Cantidad" id="cant">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                </select>
-                <div class="valor">${{ $details['valor'] }}</div>
+            <form action="{{ route('ubicacion') }}" method="post">
+                @csrf
+                <div class="final-caja">
+                    <select name="products[{{ $id }}][quantity]" id="cant">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    <div class="valor">${{ $details['valor'] }}</div>
+                    <input type="hidden" name="products[{{ $id }}][price]" value="{{ $details['valor'] }}">
+                </div>
             </div>
-        </div>
-        <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
-
+            <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
             @endforeach
-        @else
-        <section class="carro-vacio">
-            <img src="/assets/img/img-carro/autodraft web_img_cesta.png" alt="">
-            <p>Aún no tienes artículos en tu carrito.</p>
-            <input type="submit" value="VER PRODUCTOS">
+<!-- --------------------------------------------botón envio--------------------------------------------- -->
+                <section class="btn-enviar-prods">
+                    <input type="submit" value="Aceptar">
+                </section>
+            </form>
+<!-- -----------------------------------Seccion carro vacio---------------------------------------------- -->
+            @else
+            <section class="carro-vacio">
+                <img src="/assets/img/img-carro/autodraft web_img_cesta.png" alt="">
+                <p>Aún no tienes artículos en tu carrito.</p>
+                <input type="submit" value="VER PRODUCTOS">
+            </section>
+            @endif
         </section>
-        @endif
-    </section>
-    <!-- --------------------------------------------botón envio--------------------------------------------- -->
-    @if(session('cart'))
-    <section class="btn-enviar-prods">
 
-        <form action="/pages/ubicacion.html">
-            <input type="submit" value="Aceptar">
-        </form>
-    </section>
-    @endif
-    <!-- -----------------------------------Seccion carro vacio---------------------------------------------- -->
-
-
-    @include('partials.contact_section')
+        @include('partials.contact_section')
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
