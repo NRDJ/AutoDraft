@@ -95,3 +95,33 @@
     background-color: white;
     color: red;
   }
+
+
+
+
+
+  @media (max-width: 768px) {
+    .head-list ul .imagen-hidden-uno {
+      display: none;
+    }
+    .head-list ul .imagen-hidden {
+      display: contents;
+    }
+    .head-list ul li img {
+      width: 50px;
+      margin-left: 10px;
+    }
+    .head-list ul li a {
+      font-size: 0.5em;
+    }
+    .head-list ul li a:hover {
+      font-size: 0.7em;
+    }
+    .head-list .active {
+      color: black;
+      font-size: 0.7em;
+    }
+    .container{
+      margin-bottom: 50px;
+    }
+}
