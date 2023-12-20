@@ -85,9 +85,9 @@
             </div>
         </div>
         <div class="btn-aniadir">
-            <form action="{{ route('index') }}" method="get" enctype="multipart/form-data">
+            <a href="{{ route('add.to.cesta', $product->id) }}">                
                 <input type="submit" value="Añadir">
-            </form>
+            </a>
         </div>
         <div class="separation"><img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt=""></div>
     @endforeach

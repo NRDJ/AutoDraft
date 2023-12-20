@@ -60,4 +60,8 @@ Route::get('/products/{id}/modificar', [ProductoController::class, 'modificar'])
 Route::post('/products/{id}/modificar', [ProductoController::class, 'update'])
 ->middleware(['auth', 'verified'])->name('update');
 
+// add to shoppingc cart/cesta
+
+Route::get('/add-to-cesta/{id}', [ProductoController::class, 'addToCesta'])->name('add.to.cesta');
+
 require __DIR__.'/auth.php';

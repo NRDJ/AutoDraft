@@ -95,6 +95,32 @@ class ProductoController extends Controller {
         $products = DB::table('productos')->get();
         return view('catalogo', ['products' => $products]);
     }
+ 
+    public function addToCesta($id) {
+    
+        $producto = Producto::find($id);
+
+        if(!$producto) {
+            abort(404);
+        }
+
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                "nombre" => $producto->nombre,
+                "cantidad" => 1,
+                "valor" => $producto->valor,
+                "descripcion" => $producto->descripcion,
+                "imagen" => $producto->imagen
+            ];
+        }
+
+        session()->put('cart', $cart);
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
+    }
 
     // Example controller method
 }

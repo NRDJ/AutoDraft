@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
     <div class="redes-sociales">
             <a href="#"><img src="assets/img/fb.png" alt=""></a>
             <a href="#"><img src="assets/img/ig.png" alt=""></a>
@@ -35,14 +35,14 @@
     <section class="productos-carro">
         <h3>Mi carrito</h3>
         <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
+        @if(session('cart'))
+            @foreach(session('cart') as $id => $details)
         <div class="caja">
             <div class="producto">
-                <img src="/assets/img/img-catalogo/aaaaa.jpg" alt="">
+                <img src="{{ asset('uploads/' . $details['imagen']) }}" alt="">
                 <div class="descripcion">
                     <h4>Descripción</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto optio, quibusdam expedita facilis
-                        ad ipsum tempore molestias fugiat provident. Unde velit cumque dignissimos earum assumenda
-                        similique consequatur rem, accusamus facilis!</p>
+                    <p>{{ $details['descripcion'] }}</p>
                 </div>
             </div>
             <div class="btn-interaccion">
@@ -63,9 +63,17 @@
                     <option value="7">7</option>
                     <option value="8">8</option>
                 </select>
-                <div class="precio">$000.000</div>
+                <div class="valor">${{ $details['valor'] }}</div>
             </div>
         </div>
+            @endforeach
+        @else
+        <section class="carro-vacio">
+            <img src="/assets/img/img-carro/autodraft web_img_cesta.png" alt="">
+            <p>Aún no tienes artículos en tu carrito.</p>
+            <input type="submit" value="VER PRODUCTOS">
+        </section>
+        @endif
         <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
     </section>
     <!-- --------------------------------------------botón envio--------------------------------------------- -->
@@ -76,12 +84,6 @@
         </form>
     </section>
     <!-- -----------------------------------Seccion carro vacio---------------------------------------------- -->
-    <section class="carro-vacio">
-        <img src="/assets/img/img-carro/autodraft web_img_cesta.png" alt="">
-        <p>Aún no tienes artículos en tu carrito.</p>
-        <input type="submit" value="VER PRODUCTOS">
-    </section>
-
 
 
     @include('partials.contact_section')
