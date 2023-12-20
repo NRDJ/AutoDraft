@@ -36,8 +36,8 @@ Route::get('/contacto', function () {
 Route::get('/dashboard', [ProductoController::class, 'getProducts'])
     ->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('shoppingCart/cesta', function () {
-    return view('shoppingCart/cesta');
+Route::get('cesta', function () {
+    return view('cesta');
 })->name('cesta');
 
 Route::middleware('auth')->group(function () {
