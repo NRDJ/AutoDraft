@@ -119,7 +119,7 @@ class ProductoController extends Controller {
         }
 
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'Producto añadido exitosamente a la cesta.');
     }
 
     public function removeFromCesta($id) {

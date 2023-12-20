@@ -95,5 +95,19 @@
 
     @include('partials.contact_section')
 </body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+            var message = "{{ Session::get('success') }}";
+
+            if(message) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: message,
+                })
+            }
+    </script>
+
 
 </html>
