@@ -49,7 +49,7 @@
                 <p class="parr">Vendido y entregado por <b>AutoDraft</b></p>
                 <div class="inter">
                     <a href="#">Guardar para mas adelante</a>
-                    <p>|</p> <a href="#">Eliminar</a>
+                    <p>|</p> <a href="{{ route('remove.from.cesta', $id) }}">Eliminar</a>
                 </div>
             </div>
             <div class="final-caja">
@@ -66,6 +66,8 @@
                 <div class="valor">${{ $details['valor'] }}</div>
             </div>
         </div>
+        <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
+
             @endforeach
         @else
         <section class="carro-vacio">
@@ -74,19 +76,34 @@
             <input type="submit" value="VER PRODUCTOS">
         </section>
         @endif
-        <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
     </section>
     <!-- --------------------------------------------botón envio--------------------------------------------- -->
+    @if(session('cart'))
     <section class="btn-enviar-prods">
 
         <form action="/pages/ubicacion.html">
             <input type="submit" value="Aceptar">
         </form>
     </section>
+    @endif
     <!-- -----------------------------------Seccion carro vacio---------------------------------------------- -->
 
 
     @include('partials.contact_section')
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+            var message = "{{ Session::get('success') }}";
+
+            if(message) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: message,
+                })
+            }
+    </script>
 
 </html>

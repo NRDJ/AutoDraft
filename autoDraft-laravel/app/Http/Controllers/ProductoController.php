@@ -122,5 +122,16 @@ class ProductoController extends Controller {
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
+    public function removeFromCesta($id) {
+        $cart = session()->get('cart');
+
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+            session()->put('cart', $cart);
+        }
+
+        return redirect()->back()->with('success', 'Producto removido exitosamente de la cesta.');
+    }
+
     // Example controller method
 }
