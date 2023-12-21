@@ -16,11 +16,14 @@
         <h2>Cesta</h2>
     </div>
     <section class="ubi">
-        <h3>Calcular entrega</h3>
+        <!-- <h3>Calcular entrega</h3>
         <div class="formulario-ubi"><input type="text" class="input-ubi">
             <input type="submit" value="Calcular" class="btn-ubi">
         </div>
-        <a href="#" id="use-my-location">Usar mi ubicación</a>
+        <a href="#">Usar mi ubicación</a> -->
+        <h3>Los costos de envío variarán según la zona de entrega. Dichos costos se determinarán en común acuerdo
+            directamente con la sucursal.</h3>
+            <img src="/assets/img-contactos/caja.png" alt="">
     </section>
 
     <section class="total">
@@ -36,11 +39,15 @@
         </div>
     </section>
     <div class="botones">
-        <div><input type="submit" value="SEGUIR COMPRANDO" class="seguir"></div>
         <div>
-            <form action="{{ route('catalogo') }}" method="get">
+            <a href="{{ route('catalogo') }}">
+                <input type="submit" value="SEGUIR COMPRANDO" class="seguir"></div>
+            </a>
+        <div>
+            <a href="{{ route('catalogo') }}">
                 <input type="submit" value="COMPRAR MÁS PRODUCTOS" class="comprar">
-            </form>  
+            </a>
+
         </div>
     </div>
 
