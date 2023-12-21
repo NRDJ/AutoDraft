@@ -1,6 +1,6 @@
 <div class="redes-sociales">
-        <a href="#"><img src="assets/img/fb.png" alt=""></a>
-        <a href="#"><img src="assets/img/ig.png" alt=""></a>
+        <a href="https://web.facebook.com/autodraft.cl/"><img src="assets/img/fb.png" alt=""></a>
+        <a href="https://www.instagram.com/autodraft.cl/"><img src="assets/img/ig.png" alt=""></a>
 </div>
 <div class="head-list">
     <!-- Adds the class 'active' to the <a> element to mark it as selected depending on the route -->

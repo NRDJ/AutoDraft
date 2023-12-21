@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,10 +16,12 @@
         <div class="container">
             <img src="../assets/img/logo.png" alt="">
             <p>Ingrese su correo y luego haga click en enviar, posteriormente le llegará un link a su correo con la
-                información para la recuperación de contraseña</p>
+                información para la recuperación de contraseña.</p>
             <form method="POST" action="{{ route('password.email') }}">
-                <label for="">Email</label>
-                <input type="email">
+                @csrf
+                <!-- Email Address -->
+                <label for="email" :value="__('Email')">Email</label>
+                <input id="email" type="email" name="email" :value="old('email')" required autofocus>
                 <input type="submit" name="" id="" value="Enviar" class="btn-contrasenia">
             </form>
         </div>
