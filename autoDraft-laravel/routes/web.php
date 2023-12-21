@@ -71,5 +71,7 @@ Route::get('/remove-from-cesta/{id}', [ProductoController::class, 'removeFromCes
 // remove from cart/cesta
 Route::post('/ubicacion', [ProductoController::class, 'ubicacion'])->name('ubicacion');
 
+Route::get('/ubicacion', [ProductoController::class, 'ubicacion'])->name('ubicacion');
+
 
 require __DIR__.'/auth.php';

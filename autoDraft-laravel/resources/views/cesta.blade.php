@@ -82,7 +82,9 @@
             <section class="carro-vacio">
                 <img src="/assets/img/img-carro/autodraft web_img_cesta.png" alt="">
                 <p>Aún no tienes artículos en tu carrito.</p>
-                <input type="submit" value="VER PRODUCTOS">
+                <form action="{{ route('catalogo') }}" method="get">
+                    <input type="submit" value="VER PRODUCTOS">
+                </form>
             </section>
             @endif
         </section>
