@@ -73,5 +73,4 @@ Route::post('/ubicacion', [ProductoController::class, 'ubicacion'])->name('ubica
 
 Route::get('/ubicacion', [ProductoController::class, 'ubicacion'])->name('ubicacion');
 
-
 require __DIR__.'/auth.php';
