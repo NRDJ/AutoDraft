@@ -386,5 +386,11 @@ body {
   }
   .carro-vacio input{
     font-size: 0.6em;
+    width: 80%;
+    text-align: center;
+  }
+  .btn-enviar-prods input{
+    width: 80%;
+    text-align: center;
   }
 }
