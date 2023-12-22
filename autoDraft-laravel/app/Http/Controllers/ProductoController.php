@@ -97,17 +97,16 @@ class ProductoController extends Controller {
     }
  
     public function addToCesta($id) {
-    
         $producto = Producto::find($id);
-
+    
         if(!$producto) {
-            abort(404);
+            return response()->json(['message' => 'Product not found'], 404);
         }
-
+    
         $cart = session()->get('cart', []);
-
+    
         if(isset($cart[$id])) {
-            return redirect()->back()->with('failure', 'El producto ya está en la cesta!');
+            return response()->json(['message' => 'El producto ya está en la cesta!'], 400);
         } else {
             $cart[$id] = [
                 "nombre" => $producto->nombre,
@@ -117,9 +116,9 @@ class ProductoController extends Controller {
                 "imagen" => $producto->imagen
             ];
         }
-
+    
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Producto añadido exitosamente a la cesta.');
+        return response()->json(['message' => 'Producto añadido exitosamente a la cesta.']);
     }
 
     public function removeFromCesta($id) {

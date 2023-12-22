@@ -12,7 +12,7 @@
         <li><a href="{{ route('laminas') }}" class="{{ Request::is('laminas') ? 'active' : '' }}">Láminas de seguridad</a></li>
         <li><a href="{{ route('sobre') }}" class="{{ Request::is('sobre') ? 'active' : '' }}">Sobre nosotros</a></li>
         <li><a href="{{ route('contacto') }}" class="{{ Request::is('contacto') ? 'active' : '' }}">Contacto</a></li>
-        <li><a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}">Intranet</a></li>
+        <li><a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard', 'login') ? 'active' : '' }}">Intranet</a></li>
         <li><a href="{{ route('cesta') }}" class="{{ Request::is('cesta') ? 'active' : '' }}">Cesta</a></li>
     </ul>
 </div>
