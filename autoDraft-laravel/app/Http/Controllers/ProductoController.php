@@ -127,9 +127,10 @@ class ProductoController extends Controller {
         if(isset($cart[$id])) {
             unset($cart[$id]);
             session()->put('cart', $cart);
+            return response()->json(['message' => 'Producto removido exitosamente de la cesta.']);
         }
-
-        return redirect()->back()->with('success', 'Producto removido exitosamente de la cesta.');
+    
+        return response()->json(['message' => 'Product not found in cart'], 404);
     }
 
     public function ubicacion(Request $request) {
