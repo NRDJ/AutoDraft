@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles-contraseña.css">
-    <title>Cambio de contraseña</title>
+    <link rel="stylesheet" href="/styles/styles-contraseña.css" type="text/css">
+    <title>Contraseña</title>
 </head>
-
 <body>
     <div class="redes-sociales">
         <a href="#"><img src="/assets/img/fb.png" alt=""></a>
@@ -27,18 +25,18 @@
         </ul>
     </div>
 
-    <section>
-        <div class="container">
-            <img src="/assets/img/logo.png" alt="">
-            <p>Ingrese su correo y luego haga click en enviar, posteriormente le llegará un link a su correo con la
-                información para la recuperación de contraseña</p>
-            <form action="/pages/enviar.html">
-                <label for="">Email</label>
-                <input type="email">
-                <input type="submit" name="" id="" value="Enviar" class="btn-contrasenia">
-            </form>
-        </div>
-    </section>
-</body>
 
+<section class="enviar">
+    <form action="/pages/enviar.html">
+        <label for="">Email</label>
+        <input type="email" required>
+        <label for="">Contraseña</label>
+        <input type="text" required>
+        <label for="">Confirmar contraseña</label>
+        <input type="text" required>
+        <input type="submit" name="" id="" value="Enviar" class="btn-enviar">
+    </form>
+</section>
+    
+</body>
 </html>
