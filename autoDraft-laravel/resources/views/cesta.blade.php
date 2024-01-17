@@ -19,6 +19,7 @@
     <section class="productos-carro">
         <h3>Mi carrito</h3>
         <div id="product-list">
+        @if(is_array(session('cart')) && count(session('cart')) > 0)
             @foreach(session('cart') as $id => $details)
             <div class="caja product" id="product-{{$id}}">
                 <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
@@ -55,6 +56,7 @@
                     </div>
             </div>
             @endforeach
+        @endif
 <!-- --------------------------------------------botón envio--------------------------------------------- -->
             <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
                 <section class="btn-enviar-prods">
