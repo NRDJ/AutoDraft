@@ -15,7 +15,7 @@ class ProductoController extends Controller {
             'nombre' => 'required|min:4|max:75',
             'valor' => 'required|numeric|min:1', // Assuming it cannot be 0
             'descripcion' => 'required|min:4|max:500',
-            'imagen' => 'image|mimes:jpeg,png,jpg,webp|max:2048',
+            'imagen' => 'image|mimes:jpeg,png,jpg,webp|max:3001',
         ]);
 
         // Store the record in the database
