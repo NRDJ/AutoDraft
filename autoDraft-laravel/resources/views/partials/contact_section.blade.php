@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/@botpoison/browser" async></script>
+
 <section id="seccion-tres">
         <div class="pagos"><img src="/assets/img/pagos.png" alt=""></div>
         <div class="contacto">
@@ -13,7 +15,8 @@
                 <div class="contacto-imagen"><img src="/assets/img/logo-dos.png" alt=""></div>
             </span>
             <span class="formulario">
-                <form action="https://formsubmit.co/felipesanchezp24@gmail.com" method="POST">
+                <form action="https://submit-form.com/SVOvSbIty" method="POST" 
+                    data-botpoison-public-key="pk_a8d38f60-e514-46aa-bf68-d745e565a5d4">
                     <p>Nombre</p>
                     <br>
                     <input type="text" name="Nombre" id="nombre">
@@ -28,11 +31,24 @@
                     <br>
                     <textarea name="Asunto del mensaje" id="mensaje" cols="30" rows="10"></textarea>
                     <br><br><br><br><br>
-                    <div class="btn-envio"><input type="submit" id="enviarCorreo"></div>
+                    <div class="btn-envio"><input value="Enviar mensaje" type="submit" id="enviarCorreo"></div>
 
-                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                    <input type="hidden" name="_next" value="www.autodraft.cl">
                     <input type="hidden" name="_captcha" value="false">
                 </form>
+                <script>
+                    var formElement = document.getElementById("form");
+                    var buttonElement = document.getElementById("button");
+                    formElement.addEventListener("botpoison-challenge-start", function () {
+                        buttonElement.setAttribute("disabled", "disabled");
+                    });
+                    formElement.addEventListener("botpoison-challenge-success", function () {
+                        buttonElement.removeAttribute("disabled");
+                    });
+                    formElement.addEventListener("botpoison-challenge-error", function () {
+                        buttonElement.removeAttribute("disabled");
+                    });
+                </script>
             </span>
         </div>
         <div class="linea-final"></div>
