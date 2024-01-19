@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/@botpoison/browser" async></script>
-
 <section id="seccion-tres">
         <div class="pagos"><img src="/assets/img/pagos.png" alt=""></div>
         <div class="contacto">

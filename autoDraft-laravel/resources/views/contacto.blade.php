@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/img/logo-dos.png">
     <link rel="stylesheet" href="/styles/styles-contacto.css" type="text/css">
+    <script src="https://unpkg.com/@botpoison/browser" async></script>
     <title>Contacto</title>
 </head>
 
@@ -38,7 +39,7 @@
         <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="">
     </div>
     <div class="form-email">
-        <form action="https://formsubmit.co/felipesanchezp24@gmail.com" method="POST">
+        <form id="form2" action="https://submit-form.com/GHPAfeaRw" m method="POST">
             <h2>Envía un mensaje</h2>
             <br><br><br>
             <input type="text" name="Nombre" id="nombre" placeholder="Nombre*">
@@ -47,11 +48,27 @@
             <br><br><br>
             <textarea name="Mensaje" id="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje*"></textarea>
             <br><br><br><br><br>
-            <input type="submit" class="boton-form" value="Enviar">
-            <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+            <input type="submit" class="boton-form" id="button2" value="Enviar">
+            <input type="hidden" name="_next" value="https://www.autodraft.cl>
             <input type="hidden" name="_captcha" value="false">
         </form>
     </div>
+    <script>
+        $(document).ready(function() {
+
+            var formElement = document.getElementById("form2");
+            var buttonElement = document.getElementById("button2");
+            formElement.addEventListener("botpoison-challenge-start", function () {
+                buttonElement.setAttribute("disabled", "disabled");
+            });
+            formElement.addEventListener("botpoison-challenge-success", function () {
+                buttonElement.removeAttribute("disabled");
+            });
+            formElement.addEventListener("botpoison-challenge-error", function () {
+                buttonElement.removeAttribute("disabled");
+            });
+        });
+     </script>
     @include('partials.contact_section')
 
 </body>

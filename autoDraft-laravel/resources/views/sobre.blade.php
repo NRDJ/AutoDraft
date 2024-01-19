@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/img/logo-dos.png">
     <link rel="stylesheet" href="/styles/styles-sobre.css" type="text/css">
+    <script src="https://unpkg.com/@botpoison/browser" async></script>
     <title>Sobre nosotros</title>
 </head>
 
