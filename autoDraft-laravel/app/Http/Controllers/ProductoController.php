@@ -28,7 +28,7 @@ class ProductoController extends Controller {
         if ($request->hasFile('imagen')) {
             $image = $request->file('imagen');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads'), $imageName);
+            $imagePath = $image->storeAs('images', $imageName, 'public');
             $producto->imagen = $imageName;
         }
 
@@ -44,7 +44,12 @@ class ProductoController extends Controller {
 
     public function destroy($id) {
         $product = Producto::find($id);
+        
         if ($product) {
+            // Delete the image file
+            Storage::disk('public')->delete('images/' . $product->imagen);
+
+            // Delete the product
             $product->delete();
             return response()->json(['success' => 'Product eliminado exitosamente']);
         } else {
@@ -75,15 +80,16 @@ class ProductoController extends Controller {
         // handle the file upload if there is one
         if ($request->hasFile('imagen')) {
             // Delete the old image from the storage
-            Storage::delete(public_path('uploads/' . $product->imagen));
+            Storage::disk('public')->delete('images/' . $product->imagen);
     
             // Upload the new image
             $image = $request->file('imagen');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('uploads'), $filename);
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $imagePath = $image->storeAs('images', $imageName, 'public');
     
             // Update the product image
-            $product->imagen = $filename;
+            $product->imagen = $imageName;
+
         }
     
         $product->save();

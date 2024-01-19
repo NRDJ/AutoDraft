@@ -20,7 +20,7 @@
     <section id="seccion-catalogo">
     @foreach($products as $product)
         <div class="caja-uno">
-            <div class="left-side"><img src="{{ asset('uploads/' . $product->imagen) }}" alt=""></div>
+            <div class="left-side"><img src="{{ asset('storage/images/' . $product->imagen) }}" alt=""></div>
             <div class="right-side">
                 <span class="titulo">
                     <h2>{{ $product->nombre }}</h2>
