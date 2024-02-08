@@ -34,9 +34,7 @@
                 <div class="btn-interaccion">
                     <p class="parr">Vendido y entregado por <b>AutoDraft</b></p>
                     <div class="inter">
-                        <a href="#">Guardar para mas adelante</a>
-                        <p>|</p> 
-                        <a href="#" class="remove-from-cart" data-id="{{ $id }}">Eliminar</a>
+                        <a href="#" class="remove-from-cart" data-id="{{ $id }}">Eliminar producto</a>
                     </div>
                 </div>
                 <form action="{{ route('ubicacion') }}" method="post">

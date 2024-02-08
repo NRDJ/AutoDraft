@@ -40,7 +40,7 @@
     </section>
     <div class="botones">
         <div>
-            <a href="{{ route('catalogo') }}">
+            <a target="_blank" href="https://micrositios.getnet.cl/autodraft">
                 <input type="submit" value="SEGUIR COMPRANDO" class="seguir"></div>
             </a>
         <div>
