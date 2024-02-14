@@ -71,59 +71,66 @@ body {
   text-align: center;
 }
 
-.caja-uno{
-  padding: 40px;
+#seccion-catalogo{
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+}
+.caja-uno{
+  padding: 20px 5px;
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
 }
 .caja-uno .left-side{
-  width: 50%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .left-side img{
-  width: 40%;
+  width: 50%;
 }
 .caja-uno .right-side{
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
 }
 .right-side .titulo{
   background: url(/assets/img/img-catalogo/fondo-rojo.png)no-repeat;
   background-size: 100%;
-  width: auto;
+  width:50%
 }
 .right-side .titulo h2{
-  font-size: auto;
-  margin-left: 20px;
+  padding-left: 10px;
 }
 .right-side h3{
+  width: 50%;
   font-size: 1.2em;
-  margin: 20px;
+  margin: 20px 0;
+  text-align: left;
 }
 .right-side p{
-  margin-left: 20px;
+  width: 50%;
+  text-align: left;
 }
 .right-side .precio{
-  font-size: 0.6em;
-  display: flex ;
-  margin-left: 15px;
   margin-top: 20px;
   background: url(/assets/img/img-catalogo/fondo-gris.png) no-repeat;
-  background-size: 50%;
+  background-size: 100%;
+  width: 50%;
 }
 .right-side .precio p{
-  font-size: 2em;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
 }
-.separation{
-  margin: 20px;
-} 
-
 .btn-aniadir{
-  width: 37%;
-  margin: auto;
+  width: 50%;
+  margin-top: 20px;
 }
 .btn-aniadir input{
   width: 100%;
@@ -133,6 +140,7 @@ body {
   font-size: 1.3em;
   transition: 1s;
   cursor: pointer;
+  border-radius: 40px;
 }
 .btn-aniadir input:hover{
   scale: 105%;
@@ -312,30 +320,32 @@ margin: 0;
 
 /* ----------------------------------------------------------------------------- */
 
-.caja-uno{
-  display: flex;
+#seccion-catalogo{
   flex-direction: column;
   align-items: center;
 }
-.caja-uno .left-side{
-  justify-content: center;
-  width: 100%;
-  display: flex;
+.caja-uno{
+  width: 95%;
+  margin-bottom: 60px;
 }
-.caja-uno .right-side{
-  justify-content: center;
-  width: 100%;
-  display: flex;
+.left-side img{
+  width: 80%;
+}
+.right-side .titulo{
+  width:80%
+}
+.right-side h3{
+  width: 80%;
+  margin: 20px 0;
+}
+.right-side p{
+  width: 80%;
 }
 .right-side .precio{
-  display: flex ;
-  margin: 0;
-  margin-top: 20px;
-  background-size: 100%;
-  justify-content: center;
+  width: 80%;
 }
-.right-side .precio p{
-  font-size: 2em;
-  text-align: center;
+.btn-aniadir{
+  width: 80%;
+  margin-top: 20px;
 }
 }
