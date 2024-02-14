@@ -21,7 +21,7 @@
                 <label for="">Inicio de sesión</label>
                 <input type="text" placeholder="Nombre">
                 <input type="password" placeholder="Contraseña">
-                <a href="#">Olvidé mi contraseña</a>
+           
                 <input class="ingreso" type="submit" value="Ingresar">
         </div>
         <div></div>

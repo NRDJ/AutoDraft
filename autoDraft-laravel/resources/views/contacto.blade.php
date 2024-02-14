@@ -22,7 +22,7 @@
     </div>
     <div class="redes">
         <div class="listado">
-            <span><img src="/assets/img-sobre/autodraft web2_icon_ubicacion.png" alt=""><p>Agua Santa 3305, Viña Del Mar, 2520000</p></span>
+            <span><img src="/assets/img-sobre/autodraft web2_icon_ubicacion.png" alt=""><p>1 Norte 1055 esquina 3 1/2 Oriente, Viña del Mar</p></span>
             <span><img src="/assets/img-sobre/autodraft web2_icon_telefono.png" alt=""><p>(+56) 3290 8872 / (+56) 9 4771 6961</p></span>
             <span><img src="/assets/img-sobre/autodraft web2_icon_correo.png" alt=""><p>ventas.autodraft@gmail.com</p></span>
         </div>

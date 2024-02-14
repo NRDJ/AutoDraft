@@ -27,7 +27,7 @@
                 </span>
                 <h3>DESCRIPCIÓN</h3>
                 <p>{{ $product->descripcion }}</p>
-                <div class="precio"><p>${{ $product->valor }}</p></div>
+               <div class="precio"><p>${{ number_format($product->valor, 0, '', '.') }}</p></div>
             </div>
         </div>
         <div class="btn-aniadir">

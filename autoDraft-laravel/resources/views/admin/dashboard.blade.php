@@ -38,6 +38,19 @@
       @endif
     </form>
     </section>
+    <section class="ingreso">
+        <form action="{{ route('password.change') }}" method="post">
+            @csrf
+            <input type="password" name="password" placeholder="Nueva contraseña">
+            <input type="password" name="password_confirmation" placeholder="Confirmar nueva contraseña">
+            <button class="btn-ingresar" type="submit">Cambiar contraseña</button>
+	 @if(session('success'))
+            <div class="alert alert-success">
+                    {{ session('success') }}
+            </div>
+         @endif
+        </form>
+    </section>
     <section class="tabla">
         <table summary="Tabla de productos Autodraft">
             <thead>

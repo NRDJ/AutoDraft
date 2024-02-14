@@ -25,7 +25,7 @@
             <div class="caja product" id="product-{{$id}}">
                 <img src="/assets/img-sobre/autodraft web2_linea separatoria.png" alt="" class="linea">
                 <div class="producto">
-                    <img src="{{ asset('uploads/' . $details['imagen']) }}" alt="">
+                    <img src="{{ asset('storage/images/' . $details['imagen']) }}" alt="">
                     <div class="descripcion">
                         <h4>Descripción</h4>
                         <p>{{ $details['descripcion'] }}</p>
